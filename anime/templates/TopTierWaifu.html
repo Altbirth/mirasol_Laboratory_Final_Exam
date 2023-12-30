@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Top Tier Waifu{% endblock %}
+
+{% block content %}
+<a href="{% url 'TopTierWaifu-add' %}"><button class="button">Add New Trainer</button></a><br>
+  <section class="trainers-container">
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Images</th>
+          <th>Waifu Name</th>
+          <th>Anime List</th>
+          <th>Date Result</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for object in object_list %}
+          <tr> <td>
+            {% if object.img %}
+              <img src = "{{ object.img.url }}" width=200>
+            {% endif %}</td>
+            <td>{{ object.name }}</td>
+            <td>{{ object.anime_list }}</td>
+            <td>{{ object.resultDate }}</td>
+            <td>
+              <a href="TopTierWaifu_list/{{ object.id }}"><button class="button-edit">Edit</button></a> |
+              <a  href="TopTierWaifu_list/{{ object.id }}/delete" ><button class="button-del">Delete</button></a>
+            </td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td colspan="2">No waifus available</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+
+  <div>
+    {% block pagination %}
+      {% include 'includes/pagination.html' %}
+    {% endblock %}
+  </div>
+{% endblock %}

@@ -1,0 +1,677 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  font-family: 'Roboto Slab';
+}
+
+body {
+  /* background-color: #d3d3d3; */
+  background-image: url('../images/nezuko.jpg');
+  background-size: cover; /* This property ensures the image covers the entire body */
+  background-position: center;
+  background-attachment: fixed; /* Set the background position as fixed */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  padding-top: 60px;
+  padding-bottom: 60px; /* Adjust as needed */
+}
+
+/*NAVBAR*/
+.navbar {
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar a {
+  margin: 5px;
+  float: none;
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  border-radius: 10px;
+  background-color: blueviolet;
+  color: black;
+  transition: 0.2s;
+}
+
+.navbar #active {
+  border-radius: 10px;
+  background-color: blueviolet;
+  color: black;
+}
+
+/*FOOTER*/
+footer {
+  position: fixed;
+  height: 15vh;
+  padding-bottom: 24px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  bottom: 0;
+  text-align: center;
+}
+
+
+/* BUTTON*/
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* You can adjust the height as needed */
+}
+
+.button {
+  color: #ffffff;
+  font-size: medium;
+  background-color: #5d4ede; /* Violet-blue color */
+  padding: 10px;
+  width: 200px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* Center the button */
+}
+
+.button:hover {
+  background-color: #4527a0; /* Darker violet-blue color on hover */
+}
+
+.button-edit, .button-del, .button-add, .button-edited {
+  color: #ffffff;
+  font-size: bold;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  width: auto;
+  text-align: center;
+  margin-top: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add a subtle text shadow */
+}
+
+.button-edit {
+  background-color: #d32f2f; /* Red color for Edit button */
+}
+
+.button-edit:hover {
+  background-color: #9a0007; /* Darker red color on hover */
+}
+
+.button-del {
+  background-color: #5d4ede; /* Violet-blue color for Delete button */
+}
+
+.button-del:hover {
+  background-color: #4527a0; /* Darker violet-blue color on hover */
+}
+
+.button-add, .button-edited {
+  background-color: #5d4ede; /* Violet-blue color for Add and Edited buttons */
+  width: 500px;
+}
+
+.button-add:hover, .button-edited:hover {
+  background-color: #4527a0; /* Darker violet-blue color on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+/*-----------------------------HOME_PAGE---------------------------------------*/
+/*CONTENT*/
+.home-content {
+  min-height: 100vh;
+}
+
+
+/* Add this to your custom CSS file, assuming you have a 'style.css' file linked in your HTML */
+
+.welcome-message {
+  text-align: center;
+  margin-top: 50px; /* Adjust the top margin as needed */
+  color: #ffffff; /* White text color for readability on the mix of violet and black background */
+}
+
+.welcome-message h1 {
+  font-size: 80px;
+  color: #ffcc00; 
+  margin-bottom: 10px;
+}
+
+.welcome-message p.quote {
+  font-size: 30px; /* Adjust the font size for the quote */
+  color: #ffffff; /* White color for the quote text */
+  font-style: italic;
+}
+
+
+.welcome-gif {
+  max-width: 100%; /* Ensure the GIF doesn't exceed its original size */
+  margin-top: 20px; /* Add some space between the quote and the GIF */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+}
+
+.form-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 30);
+  padding: 20px;
+  width: 500px;
+  color: white;
+}
+
+
+/*-----------------------------TRAINER_PAGE------------------------------------*/
+/*TRAINERS*/
+.trainers-container {
+  min-height: auto;
+  font-size: 24px; /* Adjust the font size for better readability */
+  margin: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+
+}
+
+.trainers-container table {
+  border-collapse: collapse;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid black;
+  width: 80%; 
+  margin-top: 20px; 
+}
+
+.trainers-container th,
+.trainers-container td {
+  border: 1px solid white;
+  font-size: medium;
+  text-align: left;
+  padding: 8px;
+  color: black;
+}
+
+.trainers-container th {
+  background-color: #5d4ede; /* Violet-blue background for table headers */
+}
+
+.trainers-container td pre {
+  margin: 0;
+}
+
+.trainers-container td b {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.trainers-container td b {
+  color: #ffcc00; /* Yellow color for bold text */
+}
+
+
+
+
+/*-----------------------------COLLECTION_PAGE---------------------------------*/
+.collection-container {
+  min-height: auto;
+  border-collapse: collapse;
+  margin: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.collection-container table {
+  border-collapse: collapse;
+  background-color: white;
+  border: 2px solid #dddddd;
+}
+
+.collection-container th,
+.collection-container td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.collection-container th {
+  background-color: white;
+}
+
+.collection-container td pre {
+  margin: 0;
+}
+
+.collection-container td b {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.collection-container td b {
+  color: #000000;
+}
+
+
+/* Style for trainer and collection table */
+.styled-table {
+  width: 80%;
+  margin: 20px auto; /* Center the table */
+  border-collapse: collapse;
+  border: 1px solid rgba(69, 39, 160, 0.5); /* Transparent violet-blue border */
+}
+
+/* Style for table headers */
+.styled-table th {
+  background: linear-gradient(to right, #5d4ede 60%, #7c6e9e 100%); /* Gradient: violet-blue to a lighter violet-blue */
+  color: #ffffff;
+  padding: 12px;
+  text-align: left;
+  border: 1px solid rgba(69, 39, 160, 0.5); /* Transparent violet-blue border */
+}
+
+/* Style for table data cells */
+.styled-table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid rgba(69, 39, 160, 0.5); /* Transparent violet-blue border */
+}
+
+/* Alternate row background color */
+.styled-table tbody tr:nth-child(even) {
+  background-color: rgba(125, 110, 158, 0.5); /* Semi-transparent light violet for even rows */
+}
+
+/* Alternate row background color for odd rows (to maintain white color) */
+.styled-table tbody tr:nth-child(odd) {
+  background-color: rgba(93, 78, 222, 0.5); /* Semi-transparent violet-blue for odd rows */
+}
+
+
+
+/*-----------------------------POKEMON_CARD_PAGE-------------------------------*/
+/*CARDS*/
+.cards-container {
+  min-height: auto;
+  /* border-collapse: collapse; */
+  margin: 1%;
+  /* display: flex; */
+  text-align: center;
+  font-size: 12px;
+  padding-bottom: 160px;
+}
+
+.card-box {
+  display: inline-block;
+  padding: 2%;
+  width: 25%;
+  max-width: 400px;
+  height: 50%;
+  max-height: 480;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .card-box {
+    width: 45%;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-box {
+    width: 100%;
+  }
+}
+
+.card {
+  border-radius: 15px;
+  text-align: left;
+  height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.card:hover {
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.9);
+  transition: 0.2s;
+}
+
+.card .card-image,
+.card .card-name,
+.card h2 {
+  text-align: center;
+}
+
+.card hr {
+  border: solid 1px black;
+}
+
+.card .card-type {
+  padding: 7%;
+  border-radius: 15px;
+}
+
+.card .card-image {
+  border-radius: 7.5px;
+  border: solid 1px black;
+}
+
+.card img {
+  width: 75%;
+}
+
+.card .card-name .sbs {
+  display: inline-block;
+}
+
+.card #card-number {
+  color: grey;
+}
+
+.card .card-stats th {
+  text-align: right;
+}
+
+/*CARD RARITIES*/
+.card-rarity .rarity {
+  display: inline-block;
+}
+
+.card-rarity #common-text {
+  color: #b69121;
+}
+
+.card-rarity #uncommon-text {
+  color: #208b3a;
+}
+
+.card-rarity #rare-text {
+  color: #8b0000;
+}
+
+/*CARD TYPES*/
+/*card background and border*/
+.card-type,
+#normal {
+  background-color: #fff5d2;
+  border: solid 10px #c0b89e;
+}
+
+.card-type,
+#fire {
+  background-color: #e6bfb3;
+  border: solid 10px #bb340e;
+}
+
+.card-type,
+#fighting {
+  background-color: #dda7a8;
+  border: solid 10px #881415;
+}
+
+.card-type,
+#water {
+  background-color: #b7c3e4;
+  border: solid 10px #3355b6;
+}
+
+.card-type,
+#flying {
+  background-color: #b0d3e4;
+  border: solid 10px #2e6a87;
+}
+
+.card-type,
+#grass {
+  background-color: #a8dfa7;
+  border: solid 10px #247123;
+}
+
+.card-type,
+#poison {
+  background-color: #e2b4e0;
+  border: solid 10px #6f006c;
+}
+
+.card-type,
+#electric {
+  background-color: #eadcb7;
+  border: solid 10px #c4a349;
+}
+
+.card-type,
+#ground {
+  background-color: #ddbba0;
+  border: solid 10px #6e380c;
+}
+
+.card-type,
+#psychic {
+  background-color: #e5b7d4;
+  border: solid 10px #a91074;
+}
+
+.card-type,
+#rock {
+  background-color: #e2d2a7;
+  border: solid 10px #876c27;
+}
+
+.card-type,
+#ice {
+  background-color: #bae6e0;
+  border: solid 10px #339085;
+}
+
+.card-type,
+#bug {
+  background-color: #d0e5b0;
+  border: solid 10px #445826;
+}
+
+.card-type,
+#dragon {
+  background-color: #bfb8ea;
+  border: solid 10px #3d327d;
+}
+
+.card-type,
+#ghost {
+  background-color: #c3bce3;
+  border: solid 10px #614dbc;
+}
+
+.card-type,
+#dark {
+  background-color: #e7bcb6;
+  border: solid 10px #3d1a15;
+}
+
+.card-type,
+#steel {
+  background-color: #bcd5ea;
+  border: solid 10px #2d5171;
+}
+
+.card-type,
+#fairy {
+  background-color: #eac3d8;
+  border: solid 10px #cd1179;
+}
+
+/*image backgroung*/
+.card-image,
+#normal-img {
+  background: radial-gradient(circle, transparent, #c0b89e);
+}
+
+.card-image,
+#fire-img {
+  background: radial-gradient(circle, transparent, #bb340e);
+}
+
+.card-image,
+#fighting-img {
+  background: radial-gradient(circle, transparent, #881415);
+}
+
+.card-image,
+#water-img {
+  background: radial-gradient(circle, transparent, #3355b6);
+}
+
+.card-image,
+#flying-img {
+  background: radial-gradient(circle, transparent, #2e6a87);
+}
+
+.card-image,
+#grass-img {
+  background: radial-gradient(circle, transparent, #247123);
+}
+
+.card-image,
+#poison-img {
+  background: radial-gradient(circle, transparent, #6f006c);
+}
+
+.card-image,
+#electric-img {
+  background: radial-gradient(circle, transparent, #c4a349);
+}
+
+.card-image,
+#ground-img {
+  background: radial-gradient(circle, transparent, #6e380c);
+}
+
+.card-image,
+#psychic-img {
+  background: radial-gradient(circle, transparent, #a91074);
+}
+
+.card-image,
+#rock-img {
+  background: radial-gradient(circle, transparent, #876c27);
+}
+
+.card-image,
+#ice-img {
+  background: radial-gradient(circle, transparent, #339085);
+}
+
+.card-image,
+#bug-img {
+  background: radial-gradient(circle, transparent, #445826);
+}
+
+.card-image,
+#dragon-img {
+  background: radial-gradient(circle, transparent, #3d327d);
+}
+
+.card-image,
+#ghost-img {
+  background: radial-gradient(circle, transparent, #614dbc);
+}
+
+.card-image,
+#dark-img {
+  background: radial-gradient(circle, transparent, #3d1a15);
+}
+
+.card-image,
+#steel-img {
+  background: radial-gradient(circle, transparent, #2d5171);
+}
+
+.card-image,
+#fairy-img {
+  background: radial-gradient(circle, transparent, #cd1179);
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+.page-item {
+  margin-right: 5px;
+}
+
+.page-link {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+  border: 1px solid #dee2e6;
+  color: #007bff;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.page-link:hover {
+  background-color: white;
+}
+
+/* Adjusted selectors to accommodate classes with spaces */
+.page-item.disabled {
+  /* Styles for disabled pagination item */
+  color: #6c757d;
+  pointer-events: none;
+  cursor: not-allowed;
+  background-color:  rgba(0, 0, 0, 0.9);
+  border-color: #fff;
+}
+
+.page-item.active {
+  /* Styles for active pagination item */
+  color: #fff;
+  background-color:  rgba(0, 0, 0, 0.9);
+  border-color: #007bff;
+  z-index: 3;
+}
+
+/* Social Icons for footer */
+
+.social-icons a {
+  color: white;
+  text-decoration: none; 
+  /* Add other styling properties as needed */
+}
+
+/* Hover effect for the links */
+.social-icons a:hover {
+  color: #ffffff; /* Change color on hover if desired */
+  /* Add additional hover effects */
+}

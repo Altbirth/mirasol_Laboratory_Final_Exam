@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Best Anime Of All Time{% endblock %}
+
+{% block content %}
+<a href="{% url 'BestAnimeOfAllTime-add' %}"><button class="button">Add</button></a><br>
+  <section class="trainers-container">
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Anime Title</th>
+          <th>Release Date</th>
+          <th>Rating</th>
+          <th>Genres</th>
+          <th>Studio Name</th>
+          <th>Waifus</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for object in object_list %}
+          <tr>
+            <td>{{ object.name }}</td>
+            <td>{{ object.release_date }}</td>
+            <td>{{ object.rating }}</td>
+            <td>{{ object.genres }}</td>
+            <td>{{ object.studio }}</td>
+            <td>
+              {% for award in object.waifus.all %}
+                {{ award.name }}{% if not forloop.last %}, {% endif %}
+              {% endfor %}
+            </td>
+            <td>
+              <a href="BestAnimeOfAllTime_list/{{ object.id }}"><button class="button-edit">Edit</button></a> |
+              <a  href="BestAnimeOfAllTime_list/{{ object.id }}/delete" ><button class="button-del">Delete</button></a>
+            </td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td colspan="6">No anime available</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+
+  <div>
+    {% block pagination %}
+      {% include 'includes/pagination.html' %}
+    {% endblock %}
+  </div>
+{% endblock %}

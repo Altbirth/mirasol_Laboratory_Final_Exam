@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}List of Anime{% endblock %}
+
+{% block content %}
+<a href="{% url 'AnimeList-add' %}"><button class="button">Add New Trainer</button></a><br>
+  <section class="trainers-container">
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Release Date</th>
+          <th>Durations</th>
+          <th>Description</th>
+          <th>Studio Name</th>
+          <th>Awards</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for object in object_list %}
+          <tr>
+            <td>{{ object.title }}</td>
+            <td>{{ object.release_date }}</td>
+            <td>{{ object.episode }}</td>
+            <td>{{ object.description }}</td>
+            <td>{{ object.studio }}</td>
+            <td>
+              {% for award in object.awards.all %}
+                {{ award.name }}{% if not forloop.last %}, {% endif %}
+              {% endfor %}
+            </td>
+            <td>
+              <a href="AnimeList_list/{{ object.id }}"><button class="button-edit">Edit</button></a> |
+              <a  href="AnimeList_list/{{ object.id }}/delete" ><button class="button-del">Delete</button></a>
+            </td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td colspan="6">No Anime available</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+
+  <div>
+    {% block pagination %}
+      {% include 'includes/pagination.html' %}
+    {% endblock %}
+  </div>
+{% endblock %}

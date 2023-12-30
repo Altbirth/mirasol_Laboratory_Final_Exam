@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Anime's Awards{% endblock %}
+
+{% block content %}
+<a href="{% url 'AnimationStudio-add' %}"><button class="button">Add New Trainer</button></a><br>
+  <section class="trainers-container">
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Studio Name</th>
+          <th>Country</th>
+          <th>Founded</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for object in object_list %}
+          <tr>
+            <td>{{ object.name }}</td>
+            <td>{{ object.country }}</td>
+            <td>{{ object.FoundedDate }}</td>
+            <td>
+              <a href="AnimationStudio_list/{{ object.id }}"><button class="button-edit">Edit</button></a> |
+              <a  href="AnimationStudio_list/{{ object.id }}/delete" ><button class="button-del">Delete</button></a>
+            </td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td colspan="2">No studios available</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+
+  <div>
+    {% block pagination %}
+      {% include 'includes/pagination.html' %}
+    {% endblock %}
+  </div>
+{% endblock %}
